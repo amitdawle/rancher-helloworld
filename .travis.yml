@@ -23,7 +23,7 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-before_install:
+after_success:
   - docker build -t simple .
 
 
