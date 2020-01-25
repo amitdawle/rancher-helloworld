@@ -24,7 +24,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 after_success:
-  - docker build -t simple .
+  - docker build -t simple:latest .
 
 
 deploy:
