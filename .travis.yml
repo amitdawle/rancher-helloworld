@@ -24,8 +24,7 @@ cache:
     - $HOME/.gradle/wrapper/
 
 after_success:
-  - docker build -t simple .
-  - docker tag simple amitdawle/hellodocker
+  - docker build -t amitdawle/hellodocker .
 
 
 deploy:
