@@ -9,7 +9,7 @@ before_install:
  - chmod +x gradlew
 
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew clean assemble
 
 services:
   - docker

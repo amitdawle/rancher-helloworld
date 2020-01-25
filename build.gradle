@@ -1,11 +1,5 @@
 apply plugin: 'java'
 
-gradleEnterprise {
-    buildScan {
-        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
-        termsOfServiceAgree = 'yes'
-    }
-}
 
 jar {
     manifest {
