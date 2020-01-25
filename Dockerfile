@@ -1,4 +1,4 @@
 FROM java:8  
-COPY build/classes/main /var/www/java
+COPY build/libs /var/www/java
 WORKDIR /var/www/java  
-CMD ["java", "com.ad.HelloDocker"]
+CMD ["java", "-jar" , "rancher-helloworld-latest.jar"]
