@@ -26,7 +26,9 @@ class HelloDocker{
     InetAddress ip = InetAddress.getLocalHost();
     String hostname = ip.getHostName();
     response += hostname;
+    response += ", host os is " + System.getProperty("os.name");
     response += ". The time is " + LocalDateTime.now();
+
    }catch (Exception e){
      response += "Unable to get reponse : " +  e.getMessage();
    }
