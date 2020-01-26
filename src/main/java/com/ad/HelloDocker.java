@@ -6,7 +6,9 @@ import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.time.LocalDateTime;
 
 class HelloDocker{
 
@@ -19,7 +21,15 @@ class HelloDocker{
   }
 
   private static void handleRequest(HttpExchange exchange) throws IOException {
-   String response = "Hi there!";
+   String response = "Hello from ";
+   try{
+    InetAddress ip = InetAddress.getLocalHost();
+    String hostname = ip.getHostName();
+    response += hostname;
+    response += ". The time is " + LocalDateTime.now();
+   }catch (Exception e){
+     response += "Unable to get reponse : " +  e.getMessage();
+   }
    exchange.sendResponseHeaders(200, response.getBytes().length);//response code and length
    OutputStream os = exchange.getResponseBody();
    os.write(response.getBytes());
